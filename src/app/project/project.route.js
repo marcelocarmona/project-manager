@@ -24,7 +24,14 @@
         templateUrl: 'app/project/edit/edit.html',
         controller: 'EditController',
         controllerAs: 'edit'
+      }).state('home.project.statistics', {
+        url: '/statistics/:id',
+        templateUrl: 'app/project/statistics/statistics.html',
+        controller: 'StatisticsController',
+        controllerAs: 'statistics'
       });
+
+
   }
 
 })();

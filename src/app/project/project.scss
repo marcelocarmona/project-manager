@@ -14,3 +14,18 @@
   border-bottom: 1px rgba(0, 0, 0, 0.18) solid;
   padding: 13px;
 }
+
+.float-button {
+  bottom: 45px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  position: fixed;
+  right: 29px;
+  z-index:998;
+}
+
+.no-search-result{
+  text-align: center;
+  margin: 30px;
+  font-size: 20px;
+}

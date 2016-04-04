@@ -12,7 +12,7 @@
           </div>
       </li>
       <li class="mdl-list__item mdl-list__item--two-line"
-          ng-repeat="item in project.projectList | filter:searchProject"
+          ng-repeat="item in project.projectList | filter:searchProject as filterList"
           ui-sref-active="active">
         <span class="mdl-list__item-primary-content view" ui-sref="home.project.view({id: item.id})">
           <span>{{item.title}}</span>
@@ -20,13 +20,14 @@
         </span>
         <span class="mdl-list__item-secondary-content">
           <span class="mdl-list__item-secondary-info">Statistics</span>
-          <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">trending_up</i></a>
+          <a class="mdl-list__item-secondary-action" href="#" ui-sref="home.project.statistics({id: item.id})"><i class="material-icons">trending_up</i></a>
         </span>
         <span class="mdl-list__item-secondary-content">
           <span class="mdl-list__item-secondary-info">Edit</span>
           <a class="mdl-list__item-secondary-action" href="#" ui-sref="home.project.edit({id: item.id})"><i class="material-icons">edit</i></a>
         </span>
       </li>
+      <div class="no-search-result" ng-if="filterList.length === 0">No search results</div>
     </ul>
   </div>
 
@@ -35,7 +36,7 @@
   </div>
 </div>
 <!-- Colored FAB button with ripple -->
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"
+<button class="float-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"
         ui-sref="home.project.create">
   <i class="material-icons">add</i>
 </button>
