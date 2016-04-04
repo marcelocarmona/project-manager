@@ -6,14 +6,18 @@
     .controller('EditController', EditController);
 
   /** @ngInject */
-  function EditController(projectService) {
+  function EditController(projectService, $stateParams, $state) {
 
     var vm = this;
 
-    // vm.id = $stateParams.id;
+    vm.project = angular.copy(projectService.getProject($stateParams.id))
 
-    vm.editProject = function(project){
-      projectService.editProject(project)
+    /**
+     * project update
+     */
+    vm.editProject = function(){
+      projectService.editProject(vm.project)
+      $state.go('^')
     }
 
   }

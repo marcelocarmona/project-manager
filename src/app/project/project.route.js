@@ -8,6 +8,12 @@
   /** @ngInject */
   function routerConfig($stateProvider) {
     $stateProvider
+      .state('home.project.create', {
+        url: '/create',
+        templateUrl: 'app/project/create/create.html',
+        controller: 'CreateController',
+        controllerAs: 'create'
+      })
       .state('home.project.view', {
         url: '/:id',
         templateUrl: 'app/project/view/view.html',

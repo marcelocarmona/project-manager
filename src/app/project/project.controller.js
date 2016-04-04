@@ -11,9 +11,5 @@
 
     vm.projectList = projectService.listProject();
 
-    vm.addProject = function(){
-      projectService.addProject({title: 'otro',description:'otra description'})
-    }
-
   }
 })();

@@ -13,7 +13,7 @@
     var projectList = [
     {id:'0',title: 'Project 0',description:'description', status:'approved', rfi:'123213', notes:'nota'},
     {id:'1',title: 'Project 1',description:'description', status:'pending', rfi:'123213', notes:'nota'},
-    {id:'2',title: 'Project 2',description:'description', cancelled:'pending', rfi:'123213', notes:'nota'},
+    {id:'2',title: 'Project 2',description:'description', status:'cancelled', rfi:'123213', notes:'nota'},
     {id:'3',title: 'Project 3',description:'description'}]
 
     var service = {

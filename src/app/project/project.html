@@ -6,17 +6,10 @@
 
     <ul class="demo-list-two mdl-list">
       <li class="input-search">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
-            <i class="material-icons">search</i>
-          </label>
-          <div class="mdl-textfield__expandable-holder">
-            <input class="mdl-textfield__input" type="text" id="search-expandable2" ng-model="searchProject">
-            <label class="mdl-textfield__label" for="search-expandable2">
-              Enter search text below
-            </label>
+          <div class="mui-textfield mui-textfield--float-label">
+            <input type="text" ng-model="searchProject">
+            <label>Enter search text below</label>
           </div>
-        </div>
       </li>
       <li class="mdl-list__item mdl-list__item--two-line"
           ng-repeat="item in project.projectList | filter:searchProject"
@@ -42,7 +35,8 @@
   </div>
 </div>
 <!-- Colored FAB button with ripple -->
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" ng-click="project.addProject()">
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"
+        ui-sref="home.project.create">
   <i class="material-icons">add</i>
 </button>
 
