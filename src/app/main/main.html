@@ -1,0 +1,24 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+  <header class="mdl-layout__header">
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+  </header>
+
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Project Manager</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="#" ui-sref="home.project">Project</a>
+      <a class="mdl-navigation__link" href="#" ui-sref="home.groups">Groups</a>
+      <a class="mdl-navigation__link" href="#" ui-sref="home.activities">Activities</a>
+      <a class="mdl-navigation__link" href="#" ui-sref="home.schedule">Schedule</a>
+      <a class="mdl-navigation__link" href="#" ui-sref="home.timekeeping">Timekeeping</a>
+      <a class="mdl-navigation__link" href="#" ui-sref="home.flows">Flows</a>
+      <a class="mdl-navigation__link" href="#" ui-sref="home.reporting">Reporting</a>
+    </nav>
+  </div>
+
+  <main class="mdl-layout__content">
+    <div ui-view></div>
+  </main>
+
+</div>

@@ -1,0 +1,48 @@
+<div class="mdl-grid">
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">Project List</h2>
+    </div>
+
+    <ul class="demo-list-two mdl-list">
+      <li class="input-search">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
+            <i class="material-icons">search</i>
+          </label>
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" id="search-expandable2" ng-model="searchProject">
+            <label class="mdl-textfield__label" for="search-expandable2">
+              Enter search text below
+            </label>
+          </div>
+        </div>
+      </li>
+      <li class="mdl-list__item mdl-list__item--two-line"
+          ng-repeat="item in project.projectList | filter:searchProject"
+          ui-sref-active="active">
+        <span class="mdl-list__item-primary-content view" ui-sref="home.project.view({id: item.id})">
+          <span>{{item.title}}</span>
+          <span class="mdl-list__item-sub-title">{{item.description}}</span>
+        </span>
+        <span class="mdl-list__item-secondary-content">
+          <span class="mdl-list__item-secondary-info">Statistics</span>
+          <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">trending_up</i></a>
+        </span>
+        <span class="mdl-list__item-secondary-content">
+          <span class="mdl-list__item-secondary-info">Edit</span>
+          <a class="mdl-list__item-secondary-action" href="#" ui-sref="home.project.edit({id: item.id})"><i class="material-icons">edit</i></a>
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--9-col">
+    <div ui-view></div>
+  </div>
+</div>
+<!-- Colored FAB button with ripple -->
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" ng-click="project.addProject()">
+  <i class="material-icons">add</i>
+</button>
+
